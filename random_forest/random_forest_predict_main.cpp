@@ -11,7 +11,7 @@
  */
 #include <mlpack/core.hpp>
 #include <mlpack/methods/random_forest/random_forest_model.hpp>
-#include <mlpack/core/util/mlpack_main.hpp>
+#include <mlpack/core/util/mlpack_main_predict.hpp>
 
 using namespace mlpack;
 using namespace mlpack::tree;
@@ -48,7 +48,7 @@ PARAM_UROW_OUT("predictions", "Predicted classes for each point in the test "
 PARAM_MODEL_IN(RandomForestModel, "input_model", "Pre-trained random forest to "
     "use for classification.", "m");
 
-static void mlpackMain()
+static void mlpackMainPredict()
 {
   arma::mat test = std::move(IO::GetParam<arma::mat>("test"));
   arma::Row<size_t> classes;

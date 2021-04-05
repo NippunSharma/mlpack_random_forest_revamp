@@ -12,7 +12,7 @@
 #include <mlpack/core.hpp>
 #include <mlpack/methods/random_forest/random_forest_model.hpp>
 #include <mlpack/methods/decision_tree/random_dimension_select.hpp>
-#include <mlpack/core/util/mlpack_main.hpp>
+#include <mlpack/core/util/mlpack_main_fit.hpp>
 
 using namespace mlpack;
 using namespace mlpack::tree;
@@ -101,7 +101,7 @@ PARAM_MODEL_IN(RandomForestModel, "input_model", "Pre-trained random forest to "
 PARAM_MODEL_OUT(RandomForestModel, "output_model", "Model to save trained "
     "random forest to.", "M");
 
-static void mlpackMain()
+static void mlpackMainFit()
 {
   if (IO::GetParam<int>("seed") != 0)
     math::RandomSeed((size_t) IO::GetParam<int>("seed"));
