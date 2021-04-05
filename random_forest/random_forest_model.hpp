@@ -1,3 +1,5 @@
+#ifndef MLPACK_METHODS_RANDOM_FOREST_RANDOM_FOREST_MODEL_HPP
+#define MLPACK_METHODS_RANDOM_FOREST_RANDOM_FOREST_MODEL_HPP
 #include <mlpack/methods/random_forest/random_forest.hpp>
 using namespace mlpack::tree;
 
@@ -22,3 +24,5 @@ class RandomForestModel
     ar(CEREAL_NVP(rf));
   }
 };
+
+#endif
