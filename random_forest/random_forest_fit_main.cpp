@@ -28,29 +28,9 @@ BINDING_SHORT_DESC(
     "for classification. Given labeled data, a random forest can be trained "
     "and saved for future use.");
 
-// Short Description for wrapper in other languages.
-// This is commented because BINDING_SHORT_DESC_WRAPPER is not yet implemented.
-// Note that here I have not written wether the model can be saved or used for
-// future use because all this will be present inside the documentation of the
-// "fit" and "predict" methods respectively.
-/*
-BINDING_SHORT_DESC_WRAPPER(
-    "An implementation of the standard random forest algorithm by Leo Breiman "
-    "for classification.");
-)
-*/
-
 // Long description.
 BINDING_LONG_DESC(
     "Some long description for this functionality in CLI.");
-
-// Long Description for wrapper in other languages.
-// This is commented because BINDING_LONG_DESC_WRAPPER is not yet implemented.
-/*
-BINDING_LONG_DESC_WRAPPER(
-    "Some long description for this functionality in other languages.");
-)
-*/
 
 // Example for use in CLI.
 BINDING_EXAMPLE(
@@ -63,16 +43,6 @@ BINDING_EXAMPLE(
     PRINT_CALL("random_forest", "training", "data", "labels", "labels",
         "minimum_leaf_size", 20, "num_trees", 10, "output_model", "rf_model",
         "print_training_accuracy", true));
-
-// Example for use of wrapper in other languages.
-// This is commented because BINDING_EXAMPLE_WRAPPER is not yet implemented.
-// Examples will change based on which language is used, for this 
-// we can make a modified version of the PRINT_CALL macro.
-/*
-BINDING_EXAMPLE_WRAPPER(
-    "Example for calling this through other languages.");
-)
-*/
 
 PARAM_MATRIX_IN("training", "Training dataset.", "t");
 PARAM_UROW_IN("labels", "Labels for training dataset.", "l");
@@ -101,6 +71,7 @@ PARAM_MODEL_IN(RandomForestModel, "input_model", "Pre-trained random forest to "
 PARAM_MODEL_OUT(RandomForestModel, "output_model", "Model to save trained "
     "random forest to.", "M");
 
+// param_checks are not included here, but will be included finally.
 static void mlpackMainFit()
 {
   if (IO::GetParam<int>("seed") != 0)
