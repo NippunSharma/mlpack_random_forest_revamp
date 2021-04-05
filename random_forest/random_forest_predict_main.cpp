@@ -21,11 +21,6 @@ using namespace std;
 // Program Name.
 BINDING_NAME("Random forests prediction");
 
-// Note that you will not find any _WRAPPER macros in this file
-// because documentation of the wrappers is already covered in
-// random_forest_fit_main.cpp. Here, documentation is only for the
-// CLI.
-
 // Short description.
 BINDING_SHORT_DESC(
     "Random Forest Prediction.");
