@@ -16,6 +16,8 @@ endforeach()
 # the parent scope).
 set(MLPACK_SRCS ${MLPACK_SRCS} ${DIR_SRCS} PARENT_SCOPE)
 
+# all these macros search for "random_forest_fit_main.cpp", 
+# "random_forest_predict_main.cpp" and group them.
 add_cli_executable(random_forest "fit;predict")
 add_python_binding(random_forest "fit;predict")
 add_julia_binding(random_forest "fit;predict")
