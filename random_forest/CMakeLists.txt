@@ -18,9 +18,10 @@ set(MLPACK_SRCS ${MLPACK_SRCS} ${DIR_SRCS} PARENT_SCOPE)
 
 # all these macros search for "random_forest_fit_main.cpp", 
 # "random_forest_predict_main.cpp" and group them.
-add_cli_executable(random_forest "fit;predict")
-add_python_binding(random_forest "fit;predict")
-add_julia_binding(random_forest "fit;predict")
-add_go_binding(random_forest "fit;predict")
-add_r_binding(random_forest "fit;predict")
-add_markdown_docs(random_forest "cli;python;julia;go;r" "fit;predict" "classification")
+add_cli_executable(random_forest)
+add_python_binding(random_forest)
+add_julia_binding(random_forest)
+add_go_binding(random_forest)
+add_r_binding(random_forest)
+add_markdown_docs(random_forest "cli;python;julia;go;r" "classification")
+group_bindings(random_forest "fit;predict")
