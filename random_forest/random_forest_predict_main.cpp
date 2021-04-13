@@ -25,10 +25,11 @@ BINDING_NAME("Random forests prediction");
 BINDING_SHORT_DESC(
     "Random Forest Prediction.");
 
-// Long description.
+// Long description is used only for CLI docs.
 BINDING_LONG_DESC(
     "Some description for the CLI.");
 
+// some random example specific to this method.
 BINDING_EXAMPLE(
     "To use the model to classify points in " +
     PRINT_DATASET("test_set") + " ,while saving the "
@@ -37,12 +38,14 @@ BINDING_EXAMPLE(
 
 PARAM_MATRIX_IN("test", "Test dataset to produce predictions for.", "T");
 
-PARAM_UROW_OUT("predictions", "Predicted classes for each point in the test "
-    "set.", "p");
-
 PARAM_MODEL_IN(RandomForestModel, "input_model", "Pre-trained random forest to "
     "use for classification.", "m");
 
+// Only one Output Parameter.
+PARAM_UROW_OUT("predictions", "Predicted classes for each point in the test "
+    "set.", "p");
+
+// param_checks are not included. They will be present in the final deliverable.
 static void mlpackMainPredict()
 {
   arma::mat test = std::move(IO::GetParam<arma::mat>("test"));
