@@ -29,10 +29,11 @@ BINDING_SHORT_DESC(
     "and saved for future use.");
 
 // Long description.
+// Long Description is only used for CLI docs.
 BINDING_LONG_DESC(
     "Some long description for this functionality in CLI.");
 
-// Example for use in CLI.
+// This is just some random example.
 BINDING_EXAMPLE(
     "For example, to train a random forest with a minimum leaf size of 20 "
     "using 10 trees on the dataset contained in " + PRINT_DATASET("data") +
@@ -68,6 +69,8 @@ PARAM_INT_IN("seed", "Random seed.  If 0, 'std::time(NULL)' is used.", "s", 0);
 
 PARAM_MODEL_IN(RandomForestModel, "input_model", "Pre-trained random forest to "
     "use for classification.", "m");
+
+// Only one output parameter
 PARAM_MODEL_OUT(RandomForestModel, "output_model", "Model to save trained "
     "random forest to.", "M");
 
